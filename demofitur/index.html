@@ -4,98 +4,94 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Demo Fitur – Possin</title>
-<meta name="description" content="Lihat semua fitur Possin: multi outlet, laba rugi, stok otomatis, pesan lewat QR, dan lainnya. Semua termasuk di Rp77.000 per bulan.">
+<meta name="description" content="Lihat semua fitur Possin: multi outlet, laba rugi, stok otomatis, pesan lewat QR, dan lainnya. Semua termasuk di Rp50.000 per bulan.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,800&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/style.css">
 </head>
 <body>
-<header>
-  <a class="logo" href="/">Possin</a>
-  <nav aria-label="Menu utama">
-    <div class="links-d">
+
+<div class="nav-shell" id="navShell">
+  <nav class="nav" aria-label="Menu utama">
+    <a class="brand" href="/">Possin</a>
+    <div class="desktop-links">
+      <a class="active" href="/demofitur">Demo Fitur</a>
+      <a href="/about">About</a>
+      <a href="/contact">Contact</a>
+      <a href="/blog">Blog</a>
+    </div>
+    <div class="nav-right">
+      <a class="ghost" href="https://app.possin.id/masuk">Masuk</a>
+      <a class="m-btn sm" href="https://app.possin.id/daftar">Daftar</a>
+      <button class="hamburger" type="button" id="burger" aria-label="Buka menu" aria-expanded="false" aria-controls="mobileMenu">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
       <a href="/demofitur">Demo Fitur</a>
       <a href="/about">About</a>
       <a href="/contact">Contact</a>
       <a href="/blog">Blog</a>
-      <a href="https://app.possin.id/masuk">Masuk</a>
+      <a class="mm-login" href="https://app.possin.id/masuk">Masuk</a>
+      <a class="m-btn block" href="https://app.possin.id/daftar">Daftar</a>
     </div>
-    <div class="burger-slot">
-      <button class="burger" type="button" aria-label="Buka menu" aria-expanded="false" aria-controls="menu-hp">
-        <svg class="i-open" viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
-        <svg class="i-close" viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
-      </button>
-    </div>
-    <a class="btn-nav" href="https://app.possin.id/daftar">Daftar</a>
   </nav>
-</header>
-
-<div class="overlay" id="menu-hp">
-  <a class="m-logo" href="/">Possin</a>
-  <div class="m-list">
-    <a href="/demofitur">Demo Fitur</a>
-    <a href="/about">About</a>
-    <a href="/contact">Contact</a>
-    <a href="/blog">Blog</a>
-  </div>
-  <div class="m-actions">
-    <a class="daftar" href="https://app.possin.id/daftar">Daftar</a>
-    <a class="masuk" href="https://app.possin.id/masuk">Masuk</a>
-  </div>
 </div>
 
-<main>
+<main class="wrap">
+
   <section class="df-hero">
-    <h1><span>Ini yang kamu dapat dengan</span> <b>Rp77.000</b></h1>
+    <span class="kicker">Demo Fitur</span>
+    <h1>Ini yang kamu dapat dengan <b>Rp50.000</b></h1>
     <p>Semua fitur di bawah sudah termasuk. Tanpa paket, tanpa tambahan.</p>
-    <a class="df-btn" href="https://wa.me/6285721631961?text=Halo%20Possin%2C%20saya%20mau%20berlangganan">Mulai Berlangganan</a>
+    <a class="m-btn" href="https://wa.me/6285721631961?text=Halo%20Possin%2C%20saya%20mau%20berlangganan">Mulai Berlangganan</a>
   </section>
 
   <section class="df-list" aria-label="Fitur utama">
-    <div class="df-row df-reveal">
+    <div class="df-row reveal">
       <div class="df-text"><h2>Semua cara bayar, satu layar.</h2><p>Tunai, QRIS, kartu, dan dompet digital masuk ke laporan yang sama. Tidak ada lagi rekap manual di akhir hari.</p></div>
-      <div class="df-shot df-ph">[masukkan ss disini]</div>
+      <div class="df-shot"><span class="ph">[masukkan ss disini]</span></div>
     </div>
-    <div class="df-row df-reveal">
+    <div class="df-row reveal">
       <div class="df-text"><h2>Stok bahan jalan sendiri.</h2><p>Satu cangkir terjual, bahan di resepnya ikut berkurang otomatis. Sisa bahan tinggal dilihat, tanpa hitung ulang di gudang.</p></div>
-      <div class="df-shot df-ph">[masukkan ss disini]</div>
+      <div class="df-shot"><span class="ph">[masukkan ss disini]</span></div>
     </div>
-    <div class="df-row df-reveal">
+    <div class="df-row reveal">
       <div class="df-text"><h2>Split bill dan gabung meja.</h2><p>Rombongan datang, rombongan pisah bayar. Meja digabung atau dipisah tanpa mengulang pesanan. Kasir tetap tenang.</p></div>
-      <div class="df-shot df-ph">[masukkan ss disini]</div>
+      <div class="df-shot"><span class="ph">[masukkan ss disini]</span></div>
     </div>
   </section>
 
-  <section class="df-bridge df-reveal">
+  <section class="df-bridge reveal">
     <p>Dan ini yang biasanya hanya ada di paket paling atas.</p>
-    <a class="df-btn" href="https://wa.me/6285721631961?text=Halo%20Possin%2C%20saya%20mau%20berlangganan">Mulai Berlangganan</a>
+    <a class="m-btn" href="https://wa.me/6285721631961?text=Halo%20Possin%2C%20saya%20mau%20berlangganan">Mulai Berlangganan</a>
   </section>
 
-  <section class="df-list df-top" aria-label="Fitur kelas atas">
-    <div class="df-row df-reveal">
+  <section class="df-list section-sm" aria-label="Fitur kelas atas">
+    <div class="df-row reveal">
       <div class="df-text"><h2>Semua outlet, satu laporan.</h2><p>Penjualan tiap cabang dan totalnya kelihatan sekaligus, dari mana saja kamu membukanya.</p></div>
-      <div class="df-shot df-ph">[masukkan ss disini]</div>
+      <div class="df-shot"><span class="ph">[masukkan ss disini]</span></div>
     </div>
-    <div class="df-row df-reveal">
+    <div class="df-row reveal">
       <div class="df-text"><h2>Laba rugi tanpa kalkulator.</h2><p>Tutup kasir, untung hari ini sudah terhitung, lengkap dengan pengeluarannya.</p></div>
-      <div class="df-shot df-ph">[masukkan ss disini]</div>
+      <div class="df-shot"><span class="ph">[masukkan ss disini]</span></div>
     </div>
-    <div class="df-row df-reveal">
+    <div class="df-row reveal">
       <div class="df-text"><h2>Akses karyawan sendiri-sendiri.</h2><p>Atur siapa boleh melakukan apa, dan catat shift tiap orang. Pemilik tenang walau tidak ada di tempat.</p></div>
-      <div class="df-shot df-ph">[masukkan ss disini]</div>
+      <div class="df-shot"><span class="ph">[masukkan ss disini]</span></div>
     </div>
-    <div class="df-row df-reveal">
+    <div class="df-row reveal">
       <div class="df-text"><h2>Pesan dari meja lewat QR.</h2><p>Pelanggan scan dan pesan, pesanan langsung masuk ke kasir. Antrean lebih pendek, pelayan fokus melayani.</p></div>
-      <div class="df-shot df-ph">[masukkan ss disini]</div>
+      <div class="df-shot"><span class="ph">[masukkan ss disini]</span></div>
     </div>
-    <div class="df-row df-reveal">
+    <div class="df-row reveal">
       <div class="df-text"><h2>Layar dapur yang rapi.</h2><p>Pesanan tampil di dapur sesuai urutan masuk. Tidak ada lagi kertas pesanan yang terselip.</p></div>
-      <div class="df-shot df-ph">[masukkan ss disini]</div>
+      <div class="df-shot"><span class="ph">[masukkan ss disini]</span></div>
     </div>
   </section>
 
-  <section class="df-more df-reveal">
+  <section class="df-more section-sm reveal">
     <h2>Masih ada lagi di dalamnya</h2>
     <ul>
       <li>Promo dan diskon otomatis</li>
@@ -107,7 +103,7 @@
     </ul>
   </section>
 
-  <section class="df-assure df-reveal" aria-label="Jawaban untuk keraguan">
+  <section class="df-assure section-sm reveal" aria-label="Jawaban untuk keraguan">
     <div>
       <h3>Takut data hilang?</h3>
       <p>Datanya kami bantu pindahkan dari kasir lama. Kamu tidak mulai dari nol.</p>
@@ -122,49 +118,61 @@
     </div>
   </section>
 
-  <section class="df-close df-reveal">
+  <section class="df-close section-sm reveal">
     <s class="df-was"><span style="position:absolute;left:-9999px">Harga normal </span>Rp499.000</s>
-    <p class="df-price">Rp77.000</p>
+    <p class="df-price">Rp50.000</p>
     <p class="df-sub">per bulan. Bukan salah ketik.</p>
     <p>Semua fitur di atas, harga flat, tanpa paket. Minimal langganan 1 tahun.</p>
-    <a class="df-btn" href="https://wa.me/6285721631961?text=Halo%20Possin%2C%20saya%20mau%20berlangganan">Mulai Berlangganan</a>
+    <a class="m-btn" href="https://wa.me/6285721631961?text=Halo%20Possin%2C%20saya%20mau%20berlangganan">Mulai Berlangganan</a>
     <p class="df-note">Baru buka kafe atau resto? Fitur yang sama sejak hari pertama.</p>
     <p class="df-note">Masih ragu? <a href="https://wa.me/6285721631961?text=Halo%20Possin%2C%20saya%20mau%20tanya%20dulu">Tanya dulu lewat WhatsApp</a>.</p>
   </section>
+
 </main>
 
 <footer>
-  <div class="f-top">
-    <div class="f-brand">
-      <a class="f-logo" href="/">Possin</a>
-      <p>Aplikasi kasir untuk kafe dan restoran. Rp77.000 per bulan, semua fitur.</p>
+  <div class="footer-grid">
+    <div>
+      <p class="footer-brand">Possin</p>
+      <p>Aplikasi kasir untuk kafe dan restoran. Rp50.000 per bulan, semua fitur.</p>
+      <div class="footer-social">
+        <a href="https://wa.me/6285721631961" aria-label="WhatsApp Possin"><svg viewBox="0 0 24 24"><path d="M21 11.5a8.5 8.5 0 01-12.6 7.4L3 21l2.2-5.3A8.5 8.5 0 1121 11.5z"/><path d="M8.5 9.5c0 3 2 5 5 5"/></svg></a>
+        <a href="https://www.instagram.com/aplikasikasirpossin" aria-label="Instagram Possin"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.2 6.8h.01"/></svg></a>
+        <a href="mailto:official@possin.id" aria-label="Email Possin"><svg viewBox="0 0 24 24"><rect x="2.5" y="4.5" width="19" height="15" rx="2.5"/><path d="M3 6.5l9 6.5 9-6.5"/></svg></a>
+      </div>
     </div>
-    <div class="f-cols">
-      <div>
-        <h3>Menu</h3>
-        <a href="/demofitur">Demo Fitur</a>
-        <a href="/about">About</a>
-        <a href="/contact">Contact</a>
-        <a href="/blog">Blog</a>
-      </div>
-      <div>
-        <h3>Hubungi kami</h3>
-        <a href="https://wa.me/6285721631961">WhatsApp</a>
-        <a href="mailto:official@possin.id">official@possin.id</a>
-        <a href="https://www.instagram.com/aplikasikasirpossin">Instagram</a>
-      </div>
-      <div>
-        <h3>Legal</h3>
-        <a href="/syarat-ketentuan">Syarat dan Ketentuan</a>
-        <a href="/kebijakan-privasi">Kebijakan Privasi</a>
-      </div>
+    <div>
+      <h4>Menu</h4>
+      <a href="/demofitur">Demo Fitur</a>
+      <a href="/about">About</a>
+      <a href="/contact">Contact</a>
+      <a href="/blog">Blog</a>
+    </div>
+    <div>
+      <h4>Hubungi kami</h4>
+      <a href="https://wa.me/6285721631961">WhatsApp</a>
+      <a href="mailto:official@possin.id">official@possin.id</a>
+      <a href="https://www.instagram.com/aplikasikasirpossin">Instagram</a>
+    </div>
+    <div>
+      <h4>Legal</h4>
+      <a href="/syarat-ketentuan">Syarat dan Ketentuan</a>
+      <a href="/kebijakan-privasi">Kebijakan Privasi</a>
     </div>
   </div>
-  <div class="f-bottom">
+  <div class="footer-crisp">
     <span>© 2026 Possin. Semua hak dilindungi.</span>
-    <span>Rp77.000 per bulan, minimal langganan 1 tahun.</span>
+    <span>Rp50.000 per bulan, minimal langganan 1 tahun.</span>
   </div>
 </footer>
+
+<a class="wa-float" href="https://wa.me/6285721631961?text=Halo%20Possin%2C%20saya%20mau%20tanya" aria-label="Chat WhatsApp Possin">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 004.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0012.04 2zm4.66 6.23c-.2 0-.52.07-.79.36-.27.29-1.02 1-1.02 2.43 0 1.43 1.04 2.81 1.19 3 .14.19 2.04 3.12 5.06 4.36.71.31 1.26.49 1.69.63.71.23 1.36.19 1.87.12.57-.09 1.75-.72 2-1.41.25-.69.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.66.15-.2.29-.76.95-.93 1.15-.17.2-.34.22-.64.07-.3-.15-1.24-.46-2.36-1.46-.87-.78-1.46-1.74-1.63-2.03-.17-.29-.02-.45.13-.6.13-.13.3-.34.44-.51.15-.17.2-.29.3-.49.1-.2.05-.37-.02-.52-.07-.15-.66-1.61-.92-2.2-.24-.58-.49-.5-.66-.51-.17-.01-.37-.01-.57-.01z"/></svg>
+</a>
+<button class="scroll-top" type="button" id="scrollTop" aria-label="Kembali ke atas">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+</button>
+
 <script src="/script.js" defer></script>
 </body>
 </html>
