@@ -238,6 +238,8 @@ img{max-width:100%;display:block}
 .hero-stage{
   position:relative;width:100%;max-width:600px;margin-inline:auto;
   aspect-ratio:1/1.06;container-type:inline-size;
+  transform:perspective(1200px) rotateX(var(--tx,0deg)) rotateY(var(--ty,0deg));
+  transition:transform .35s ease;
 }
 /* browser aplikasi kasir */
 .hs-app{
@@ -245,6 +247,7 @@ img{max-width:100%;display:block}
   background:var(--bg2);border:1px solid var(--line2);border-radius:2.4cqw;
   box-shadow:0 26px 60px rgba(0,0,0,.5);overflow:hidden;
   display:flex;flex-direction:column;
+  transform:translate3d(0,var(--py,0),0);
 }
 /* bar browser: titik + address pill */
 .hs-bar{
@@ -313,7 +316,7 @@ img{max-width:100%;display:block}
 }
 /* wanita ilustrasi: berdiri di bawah-tengah, kaki memudar = efek melayang */
 .hs-woman{
-  position:absolute;bottom:0;left:50%;transform:translateX(-50%);
+  position:absolute;bottom:0;left:50%;transform:translateX(-50%) translateY(var(--py,0));
   height:82%;width:auto;z-index:2;pointer-events:none;
   -webkit-mask-image:linear-gradient(to bottom,#000 76%,transparent 99%);
   mask-image:linear-gradient(to bottom,#000 76%,transparent 99%);
@@ -322,14 +325,14 @@ img{max-width:100%;display:block}
 .hs-floor{
   position:absolute;left:24%;right:24%;bottom:1%;height:36px;z-index:1;
   background:radial-gradient(ellipse at center,rgba(0,0,0,.6) 0%,transparent 70%);
-  pointer-events:none;
+  pointer-events:none;transform:translateY(var(--py,0));
 }
 /* kartu struk melayang (kiri) */
 .hs-receipt{
   position:absolute;left:-6%;top:44%;width:41%;z-index:3;
   background:var(--cream);color:#2b1d14;border-radius:1.6cqw;
   box-shadow:0 18px 44px rgba(0,0,0,.5);
-  padding:9% 8% 8%;transform:rotate(-4deg);
+  padding:9% 8% 8%;transform:rotate(var(--hs-r,-4deg)) translateY(var(--py,0px));
   animation:hsFloat 6s ease-in-out infinite;--hs-d:-8px;
 }
 .hs-receipt h5{font-family:var(--serif);font-size:2.1cqw;font-weight:800;text-align:center;margin:0 0 6%;letter-spacing:.02em;color:#2b1d14}
@@ -342,7 +345,7 @@ img{max-width:100%;display:block}
   position:absolute;right:-4%;top:-2%;width:47%;z-index:3;
   background:var(--surface2);border:1px solid var(--line2);border-radius:1.6cqw;
   box-shadow:0 18px 44px rgba(0,0,0,.5);
-  padding:7% 7% 8%;transform:rotate(3deg);
+  padding:7% 7% 8%;transform:rotate(var(--hs-r,3deg)) translateY(var(--py,0px));
   animation:hsFloat 6.5s ease-in-out .8s infinite;--hs-d:-10px;
 }
 .hs-sales span{font-size:1.5cqw;color:var(--muted);font-weight:600}
@@ -353,7 +356,7 @@ img{max-width:100%;display:block}
 .hs-bars i:nth-child(3){height:38%}.hs-bars i:nth-child(4){height:80%}
 .hs-bars i:nth-child(5){height:55%}.hs-bars i:nth-child(6){height:96%;background:linear-gradient(180deg,#ffd479,#f2b441)}
 .hs-sales .up{display:inline-flex;align-items:center;gap:.3em;font-size:1.35cqw;font-weight:800;color:var(--ok);margin-top:5%}
-@keyframes hsFloat{0%,100%{transform:rotate(var(--hs-r,0deg)) translateY(0)}50%{transform:rotate(var(--hs-r,0deg)) translateY(var(--hs-d,-8px))}}
+@keyframes hsFloat{0%,100%{transform:rotate(var(--hs-r,0deg)) translateY(var(--py,0px))}50%{transform:rotate(var(--hs-r,0deg)) translateY(calc(var(--hs-d,-8px) + var(--py,0px)))}}
 .hs-receipt{--hs-r:-4deg}.hs-sales{--hs-r:3deg}
 @media (max-width:767px){
   .hero-stage{max-width:440px}
@@ -595,6 +598,7 @@ th[scope=row]{color:var(--cream);font-weight:600}
 td.us,th.us{background:rgba(242,180,65,.08);border-left:2px solid var(--amber);border-right:2px solid var(--amber);width:33%}
 thead th.us{border-top:2px solid var(--amber);border-radius:14px 14px 0 0}
 thead th.us:first-child{border-left:2px solid var(--amber)}
+tbody tr:last-child td.us{border-bottom:2px solid var(--amber);border-radius:0 0 14px 14px}
 td.them{color:var(--muted);width:33%}
 .ok{display:inline-flex;align-items:center;gap:.45rem;color:var(--amber);font-weight:700}
 .ok svg{flex:none;width:1.15rem;height:1.15rem;stroke:currentColor;fill:none;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
@@ -923,3 +927,43 @@ textarea.m-input,textarea.input{resize:vertical;min-height:120px;line-height:1.6
 label.fl{display:block;font-size:.82rem;font-weight:700;color:var(--cream);margin-bottom:.4rem}
 .form-grid{display:grid;gap:1rem}
 .form-note{font-size:.82rem;color:var(--muted);margin:.8rem 0 0}
+
+/* ============================================================
+   SCROLL-CRAFT EFFECTS — transform/opacity/clip-path saja
+   ============================================================ */
+/* ---- ground shift: lapisan warna dasar yang bergerak hangat ---- */
+.bg-shift{
+  position:fixed;inset:0;z-index:-1;pointer-events:none;
+  background:radial-gradient(720px 340px at 50% -6%,rgba(242,180,65,.10),transparent 65%),var(--bgcur,#17110b);
+  transition:background-color 1.2s ease;
+}
+@media (prefers-reduced-motion:reduce){.bg-shift{transition:none}}
+
+/* ---- kinetik: kata demi kata ---- */
+html.kw-js .kw{display:inline-block;opacity:0;transform:translateY(.35em);line-height:inherit;
+  transition:opacity .5s ease,transform .6s cubic-bezier(.22,1,.36,1);
+  transition-delay:calc(var(--i,0)*45ms)}
+html.kw-js .kw-in .kw{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){html.kw-js .kw{opacity:1;transform:none;transition:none}}
+
+/* ---- reveal wipe: clip-path di wrapper anak (target tetap ramah IO) ---- */
+html.rv-js .reveal-wipe{opacity:0;transform:translateY(22px);
+  transition:opacity .6s ease,transform .7s cubic-bezier(.22,1,.36,1)}
+html.rv-js .reveal-wipe.in{opacity:1;transform:none}
+html.rv-js .wipe-in{clip-path:inset(0 0 100% 0);
+  transition:clip-path .9s cubic-bezier(.22,1,.36,1) .15s}
+html.rv-js .reveal-wipe.in .wipe-in{clip-path:inset(0 0 0 0)}
+@media (prefers-reduced-motion:reduce){
+  html.rv-js .reveal-wipe{opacity:1;transform:none;transition:none}
+  html.rv-js .wipe-in{clip-path:none;transition:none}
+}
+
+/* ---- signature move: garis coret tergambar sendiri ---- */
+.total-harga s{position:relative;color:#8a765d;font-size:1.2rem;text-decoration:none}
+.total-harga s::after{
+  content:"";position:absolute;left:-3%;right:-3%;top:52%;height:3px;border-radius:2px;
+  background:#e8604c;transform:scaleX(0);transform-origin:left center;
+  transition:transform .8s .4s cubic-bezier(.3,.7,.2,1);
+}
+.total-harga.in s::after{transform:scaleX(1)}
+@media (prefers-reduced-motion:reduce){.total-harga.in s::after{transition:none}}
